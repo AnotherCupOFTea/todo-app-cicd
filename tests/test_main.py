@@ -34,5 +34,3 @@ def test_add_todo_without_title(client):
     response = client.post("/todos", json={})
     assert response.status_code == 400
 
-def test_block_deployment():
-    assert 1 == 2
