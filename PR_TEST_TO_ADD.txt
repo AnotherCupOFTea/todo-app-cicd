@@ -1,0 +1,10 @@
+# Part 7: add this test to the END of tests/test_main.py on feature/new-test branch:
+
+def test_second_todo_gets_id_two(client):
+    first = client.post("/todos", json={"title": "First"})
+    second = client.post("/todos", json={"title": "Second"})
+    assert first.status_code == 201
+    assert second.status_code == 201
+    assert second.get_json()["id"] == 2
+
+# Only add it when doing Part 7. The supplied baseline is expected to show 4 passed.
