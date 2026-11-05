@@ -33,3 +33,6 @@ def test_add_todo(client):
 def test_add_todo_without_title(client):
     response = client.post("/todos", json={})
     assert response.status_code == 400
+
+def test_intentional_failure():
+    assert 1 == 2
